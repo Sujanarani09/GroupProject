@@ -22,6 +22,6 @@ public class PostAllProductsTest {
     @Test
     @DisplayName("Test post products 405")
     public void responseCode405(){
-        MatcherAssert.assertThat(response.getBody().asString(), Matchers.containsString("405"));
+        MatcherAssert.assertThat(response.jsonPath().getString("responseCode"), Matchers.is("405"));
     }
 }
